@@ -1,0 +1,10 @@
+.products-page {
+  min-height: 100vh;
+}
+
+.loading {
+  text-align: center;
+  padding: 60px;
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.7);
+}

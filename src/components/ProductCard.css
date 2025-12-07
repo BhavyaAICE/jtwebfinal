@@ -1,0 +1,169 @@
+.product-card {
+  background: rgba(10, 10, 10, 0.7);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(77, 163, 255, 0.3);
+  border-radius: 24px;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5), 0 0 20px rgba(77, 163, 255, 0.1);
+  cursor: pointer;
+  position: relative;
+}
+
+.product-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(77, 163, 255, 0.1) 0%, transparent 50%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.product-card:hover::before {
+  opacity: 1;
+}
+
+.product-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 20px 60px rgba(77, 163, 255, 0.3), 0 10px 40px rgba(0, 0, 0, 0.6);
+  border-color: rgba(77, 163, 255, 0.6);
+}
+
+.product-image {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  background: linear-gradient(135deg, rgba(77, 163, 255, 0.15), rgba(0, 0, 0, 0.9));
+  transition: transform 0.4s ease;
+}
+
+.product-card:hover .product-image {
+  transform: scale(1.05);
+}
+
+.product-info {
+  padding: var(--space-32) var(--space-24);
+}
+
+.product-category {
+  display: inline-block;
+  padding: 6px 16px;
+  background: rgba(77, 163, 255, 0.15);
+  border: 1px solid rgba(77, 163, 255, 0.4);
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: var(--space-16);
+  box-shadow: 0 0 15px rgba(77, 163, 255, 0.2);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.product-name {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: var(--space-12);
+  color: var(--color-white);
+  letter-spacing: -0.01em;
+}
+
+.product-stock {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: var(--space-20);
+}
+
+.product-variants-badge {
+  font-size: 14px;
+  color: var(--color-primary);
+  margin-bottom: var(--space-20);
+  font-weight: 600;
+}
+
+.product-pricing {
+  display: flex;
+  align-items: center;
+  gap: var(--space-12);
+  margin-bottom: var(--space-24);
+}
+
+.product-price {
+  font-size: 28px;
+  font-weight: 800;
+  background: linear-gradient(135deg, #4da3ff 0%, #00d4ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: drop-shadow(0 0 20px rgba(77, 163, 255, 0.4));
+  letter-spacing: -0.02em;
+}
+
+.product-original-price {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.4);
+  text-decoration: line-through;
+}
+
+.product-btn {
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(135deg, #1f6bff 0%, #4da3ff 100%);
+  border: 1px solid rgba(77, 163, 255, 0.3);
+  border-radius: 50px;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 6px 25px rgba(77, 163, 255, 0.4), 0 3px 12px rgba(0, 0, 0, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.product-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 35px rgba(77, 163, 255, 0.6), 0 5px 20px rgba(0, 0, 0, 0.4);
+  background: linear-gradient(135deg, #4da3ff 0%, #00d4ff 100%);
+  border-color: rgba(77, 163, 255, 0.5);
+}
+
+.product-btn:disabled {
+  background: rgba(100, 100, 100, 0.5);
+  border-color: rgba(150, 150, 150, 0.3);
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.product-btn-buy {
+  padding: 12px 20px;
+  background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%);
+  border: 1px solid rgba(6, 182, 212, 0.4);
+  border-radius: 50px;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 6px 25px rgba(6, 182, 212, 0.3), 0 3px 12px rgba(0, 0, 0, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 700;
+}
+
+.product-btn-buy:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 35px rgba(6, 182, 212, 0.5), 0 5px 20px rgba(0, 0, 0, 0.4);
+  background: linear-gradient(135deg, #0891b2 0%, #06b6d4 100%);
+  border-color: rgba(6, 182, 212, 0.6);
+}
+
+.product-btn-buy:disabled {
+  background: rgba(100, 100, 100, 0.5);
+  border-color: rgba(150, 150, 150, 0.3);
+  cursor: not-allowed;
+  opacity: 0.6;
+}
